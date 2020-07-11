@@ -120,7 +120,7 @@ func screenshot(urlString string, parentCtx context.Context, data recon) (recon,
 		}),
 	})
 	if err != nil {
-		fmt.Println("[info] %s screenshot failed\n", parsedUrl)
+		fmt.Printf("[info] %s screenshot failed\n", parsedUrl)
 		return data, buf, err
 	}
 	url = parsedUrl.String()
