@@ -24,6 +24,6 @@ It is a tool written in golang to make screenshotting urls more reliable and con
 # Installation
 
 ```bash
-   ▶ go get github.com/0xrishabh/govis
+   ▶ go get -u github.com/0xrishabh/govis
 
 ```
