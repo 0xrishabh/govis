@@ -18,12 +18,12 @@ It is a tool written in golang to make screenshotting urls more reliable and con
   }` with some twi
 * Simple to use 
 ```bash 
-    cat urls | govis
+    ▶ cat urls | govis
 ```
 
 # Installation
 
 ```bash
-   go get github.com/0xrishabh/govis
+   ▶ go get github.com/0xrishabh/govis
 
 ```
