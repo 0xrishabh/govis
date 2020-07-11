@@ -130,7 +130,7 @@ func Template() []byte {
             </div>` + "`" + `
             $(".container").append(template)
         }
-        jsonDb.forEach(addData);
+        Db.forEach(addData);
 
         $('.jsLinks').click(function(event){navigator.clipboard.writeText($(event.target).parent().parent().parent().parent().siblings()[0].innerText);alert('Javascript files copied to clipboard')})
 
