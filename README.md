@@ -15,7 +15,7 @@ It is a tool written in golang to make screenshotting urls more reliable and con
     Title,
     StatusCode,
     JsUrlsList
-  }` with some twi
+  }` with some tweaks
 * Simple to use 
 ```bash 
     ▶ cat urls | govis
