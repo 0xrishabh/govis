@@ -8,7 +8,6 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
-	nurl "net/url"
 	"os"
 	"path"
 	"strings"
@@ -18,6 +17,7 @@ import (
 	"github.com/chromedp/cdproto/emulation"
 	"github.com/chromedp/cdproto/page"
 	"github.com/chromedp/chromedp"
+	"github.com/goware/urlx"
 )
 
 type recon struct {
@@ -98,7 +98,7 @@ func screenshot(urlString string, parentCtx context.Context, data recon) (recon,
 	var err error
 
 	code := `(function(){var scripts = document.getElementsByTagName('script');var list = [];for(i=0;i<scripts.length;i++){if(scripts[i].src){list.push(scripts[i].src)};}return list;}());`
-	parsedUrl, err := nurl.Parse(urlString)
+	parsedUrl, err := urlx.Parse(urlString)
 	if err != nil {
 		fmt.Printf("[info] %s url is malformed\n", urlString)
 		return data, buf, err
