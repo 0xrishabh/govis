@@ -45,6 +45,7 @@ func saveImage(url string, image []byte, directory string) string {
 func main() {
 	threads := flag.Int("t", 10, "No of threads to use")
 	directory := flag.String("dir", "./output/", "Directory to save data inside")
+	chromeBinaryPath := flag.String("chrome-path", "", "Path to the chrome binary.")
 	flag.Parse()
 
 	createDirectoryIfNotExists(*directory)
@@ -55,6 +56,7 @@ func main() {
 
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
 		chromedp.Flag("ignore-certificate-errors", "1"),
+		chromedp.ExecPath(*chromeBinaryPath),
 	)
 	parentCtx, pcancel := chromedp.NewExecAllocator(context.Background(), opts...)
 	defer pcancel()
